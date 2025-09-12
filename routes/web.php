@@ -6,6 +6,10 @@ use App\Models\Slider; // Make sure you have a Slider model
 use App\Models\Fournisseur; // Make sure you have a Fournisseur model
 use App\Models\ImgSv; // Make sure you have an ImgSv model
 use App\Models\Reference; // Make sure you have a Reference model
+use App\Models\Produit; // Make sure you have a Produit model
+use App\Models\ProduitImage; // Make sure you have a ProduitImage model
+use App\Models\ImageCategory; // Make sure you have an ImageCategory model
+use App\Models\TextCategory; // Make sure you have a TextCategory model
 
 
 Route::get('/dashboard', function () {
@@ -52,19 +56,64 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact');
+    $image_category2 = \App\Models\ImageCategory::first();
+    $text_contact = \App\Models\TextCategory::first(); // Assuming TextCategory for text_contact; adjust if separate model
+    $fournisseurs = \App\Models\Fournisseur::first();
+    $map = null; // Placeholder for map; add config or model if needed
+
+    return view('contact', compact('image_category2', 'text_contact', 'fournisseurs', 'map'));
 })->name('contact');
 
-Route::get('/details', function () {
-    return view('details');
+Route::post('/contact', function (\Illuminate\Http\Request $request) {
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'required|string|max:20',
+        'message' => 'required|string',
+    ]);
+
+    // Handle form submission (e.g., save to DB, send email)
+    // For now, return success
+    return redirect()->back()->with('session', 'Message sent successfully!');
+
+})->name('contact.submit');
+
+Route::get('/details/{id}', function ($id) {
+    $details = \App\Models\Produit::find($id);
+    if (!$details) {
+        return redirect('/produit');
+    }
+    $image_category = \App\Models\ImageCategory::first();
+    $text_category = \App\Models\TextCategory::first();
+    $produit_image = \App\Models\ProduitImage::where('produit_id', $id)->get();
+
+    return view('details', compact('details', 'image_category', 'text_category', 'produit_image'));
 })->name('details');
 
 Route::get('/gallery', function () {
-    return view('gallery');
+    $image_category2 = ImageCategory::first();
+    $text_category = TextCategory::first();
+
+    // Create $galerie collection from ImageCategory img fields for loop
+    $galerie = collect([
+        (object) ['img' => $image_category2 ? $image_category2->img1 : null],
+        (object) ['img' => $image_category2 ? $image_category2->img2 : null],
+        (object) ['img' => $image_category2 ? $image_category2->img3 : null],
+        (object) ['img' => $image_category2 ? $image_category2->img4 : null],
+        (object) ['img' => $image_category2 ? $image_category2->img5 : null],
+    ])->filter()->values(); // Remove nulls and reindex
+
+    return view('gallery', compact('image_category2', 'text_category', 'galerie'));
 })->name('gallery');
 
-Route::get('/produit', function () {
-    return view('produit');
+Route::get('/produit/{categorie?}', function ($categorie = null) {
+    $image_category = \App\Models\ImageCategory::first();
+    $text_category = \App\Models\TextCategory::first();
+
+    $produit = $categorie ? Produit::where('categorie', $categorie)->get() : Produit::all();
+    $produit_image = ProduitImage::all();
+
+    return view('produit', compact('image_category', 'text_category', 'produit', 'produit_image', 'categorie'));
 })->name('produit');
 
 Route::get('/', function () {
