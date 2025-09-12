@@ -94,14 +94,7 @@ Route::get('/gallery', function () {
     $image_category2 = ImageCategory::first();
     $text_category = TextCategory::first();
 
-    // Create $galerie collection from ImageCategory img fields for loop
-    $galerie = collect([
-        (object) ['img' => $image_category2 ? $image_category2->img1 : null],
-        (object) ['img' => $image_category2 ? $image_category2->img2 : null],
-        (object) ['img' => $image_category2 ? $image_category2->img3 : null],
-        (object) ['img' => $image_category2 ? $image_category2->img4 : null],
-        (object) ['img' => $image_category2 ? $image_category2->img5 : null],
-    ])->filter()->values(); // Remove nulls and reindex
+    $galerie = \App\Models\Galerie::all();
 
     return view('gallery', compact('image_category2', 'text_category', 'galerie'));
 })->name('gallery');
