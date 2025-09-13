@@ -27,6 +27,7 @@ require __DIR__.'/auth.php';
 // Simple routes for main pages
 Route::get('/about', function () {
     $text_about = \App\Models\text_about::first();
+    $image_abouts = \App\Models\image_about::first();
     $img_sv = \App\Models\ImgSv::first();
     $image_category = \App\Models\ImageCategory::first();
     $text_category = \App\Models\TextCategory::first();
@@ -42,17 +43,11 @@ Route::get('/about', function () {
     ];
 
     // Create collections for looped views; adjust based on actual data structure
-    $galerie = collect([
-        (object) ['img' => $image_category ? $image_category->img1 : null],
-        (object) ['img' => $image_category ? $image_category->img2 : null],
-        (object) ['img' => $image_category ? $image_category->img3 : null],
-        (object) ['img' => $image_category ? $image_category->img4 : null],
-        (object) ['img' => $image_category ? $image_category->img5 : null],
-    ])->filter()->values(); // Remove nulls if any, reindex
+    $galerie = \App\Models\Galerie::all();
 
     $reference = \App\Models\Reference::all(); // From dedicated reference table
 
-    return view('about', compact('text_about', 'image_about', 'galerie', 'reference'));
+    return view('about', compact('text_about', 'image_about', 'image_abouts', 'galerie', 'reference'));
 })->name('about');
 
 Route::get('/contact', function () {

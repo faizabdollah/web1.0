@@ -33,7 +33,7 @@
 </section>
 <!-- end section -->
 <!-- start section -->
-<section class="cover-background position-relative overflow-visible" style="background-image: url('{{ asset($image_about->img2) }}')">
+<section class="cover-background position-relative overflow-visible" style="background-image: url('{{ asset($image_abouts->img2) }}')">
     <div class="container">
         <div class="row align-items-center overlap-section mb-1">
             <div class="col-12 position-relative" data-anime='{ "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
@@ -91,7 +91,7 @@
             <div class="col" data-bottom-top="transform: translateY(40px)" data-top-bottom="transform: translateY(-40px)">
                 <div class="services-box-style-01 hover-box md-mb-30px">
                     <div class="position-relative box-image border-radius-6px">
-                        <img class="w-100" src="{{ asset($image_about->img3) }}" alt="">
+                        <img class="w-100" src="{{ asset($image_abouts->img3) }}" alt="">
                     </div>
                     <div class="p-30px last-paragraph-no-margin text-center">
                         <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray">{{ $text_about->text16 }}</span>
@@ -104,7 +104,7 @@
             <div class="col" data-bottom-top="transform: translateY(-40px)" data-top-bottom="transform: translateY(40px)">
                 <div class="services-box-style-01 hover-box md-mb-30px">
                     <div class="position-relative box-image border-radius-6px">
-                        <img class="w-100" src="{{ asset($image_about->img4) }}" alt="">
+                        <img class="w-100" src="{{ asset($image_abouts->img4) }}" alt="">
                     </div>
                     <div class="p-30px last-paragraph-no-margin text-center">
                         <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray">{{ $text_about->text18 }}</span>
@@ -117,7 +117,7 @@
             <div class="col" data-bottom-top="transform: translateY(40px)" data-top-bottom="transform: translateY(-40px)">
                 <div class="services-box-style-01 hover-box">
                     <div class="position-relative box-image border-radius-6px">
-                        <img class="w-100" src="{{ asset($image_about->img5) }}" alt="">
+                        <img class="w-100" src="{{ asset($image_abouts->img5) }}" alt="">
                     </div>
                     <div class="p-30px last-paragraph-no-margin text-center">
                         <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray">{{ $text_about->text20 }}</span>
@@ -136,85 +136,6 @@
                 </div>
             </div>
             @endforeach
-        </div>
-    </div>
-</section>
-<!-- end section -->
-<!-- start section -->
-<section class="half-section background-position-center background-repeat pt-0" style="background-image: url('{{ asset('images/vertical-center-line-bg.svg') }}')">
-    <div class="container">
-        <div class="row position-relative z-index-1 m-0">
-            <div class="col-12 position-relative overflow-hidden border-radius-6px h-700px lg-h-550px md-h-400px d-flex align-items-center justify-content-center">
-                <video muted class="video-bg html-video border-radius-6px video-play-icon" poster="{{ asset('images/video-poster.jpg') }}">
-                    <source type="video/mp4" src="{{ asset('video/video2.mp4') }}" />
-                    <source type="video/webm" src="{{ asset('video/video2.webm') }}" />
-                </video>
-                <a href="javascript:void(0);" class="html-video-play video-icon-box video-icon-extra-large position-relative">
-                    <span>
-                        <span class="video-icon bg-white">
-                            <i class="play-icon feather icon-feather-play text-dark-gray ms-0" aria-hidden="true"></i>
-                            <i class="pause-icon feather icon-feather-pause text-dark-gray ms-0" aria-hidden="true"></i>
-                            <span class="video-icon-sonar">
-                                <span class="video-icon-sonar-bfr bg-white opacity-7"></span>
-                            </span>
-                        </span>
-                    </span>
-                </a>
-            </div>
-            <div class="col-12 text-center position-absolute left-0px bottom-minus-100px md-bottom-minus-80px z-index-9">
-                <img src="{{ asset('images/demo-hotel-and-resort-about-us-09.png') }}" alt="" data-bottom-top="transform: translate3d(100px, 0px, 0px);" data-top-bottom="transform: translate3d(-100px, 0px, 0px);" />
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end section -->
-<!-- start section -->
-<section class="background-position-center background-repeat overlap-height position-relative" style="background-image: url('{{ asset('images/vertical-center-line-bg.svg') }}')">
-    <div class="container">
-        <div class="row justify-content-center mb-5 xs-mb-7">
-            <div class="col-md-8 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <h2 class="alt-font mb-5px text-dark-gray ls-minus-2px">Exclusive ratings</h2>
-                <span class="d-inline-block">Enjoy in resorts and awesome ratings.</span>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 position-relative justify-content-center mb-4" data-anime='{ "el": "childs", "perspective": [800, 1200], "scale": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 900, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-            <!-- start review item -->
-            <div class="col review-style-05 md-mb-30px">
-                <div class="border-radius-6px bg-white box-shadow-quadruple-large border border-color-extra-medium-gray last-paragraph-no-margin">
-                    <div class="d-flex align-items-center ps-45px pe-45px pt-30px pb-30px lg-p-25px">
-                        <img class="rounded-circle w-120px xs-w-80px me-25px" src="{{ asset('images/review1.png') }}" alt="" />
-                        <p>We are happy to offer our guests truly fabulous experience of relaxing, balanced, and memorable vacation.</p>
-                    </div>
-                    <div class="border-top border-color-extra-medium-gray pt-15px pb-15px ps-45px pe-45px lg-ps-25px lg-pe-25px text-center text-sm-start">
-                        <span class="alt-font fw-500 text-dark-gray d-inline-block xs-fs-17">Herman Miller, ThemeZaa</span>
-                        <div class="review-star-icon float-sm-end float-none fs-19">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end review item -->
-            <!-- start review item -->
-            <div class="col review-style-05">
-                <div class="border-radius-6px bg-white box-shadow-quadruple-large border border-color-extra-medium-gray last-paragraph-no-margin">
-                    <div class="d-flex align-items-center ps-45px pe-45px pt-30px pb-30px lg-p-25px">
-                        <img class="rounded-circle w-120px xs-w-80px me-25px" src="{{ asset('images/review2.png') }}" alt="" />
-                        <p>What a great experience! I have visited one of the resorts with my friends and we had a great time! Highly recommended.</p>
-                    </div>
-                    <div class="border-top border-color-extra-medium-gray pt-15px pb-15px ps-45px pe-45px lg-ps-25px lg-pe-25px text-center text-sm-start">
-                        <span class="alt-font fw-500 text-dark-gray d-inline-block xs-fs-17">Matthew Taylor, ThemeZaa</span>
-                        <div class="review-star-icon float-sm-end float-none fs-19">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end review item -->
-        </div>
-        <div class="row mb-3">
-            <div class="col-12 text-center" data-anime='{ "translateY": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                <div class="text-dark-gray fw-500 mb-0 d-inline-block align-middle fs-24">Check all <strong>3,583</strong> exclusive visitor reviews on<a href="#" class="d-inline-block align-middle ms-10px"><img src="{{ asset('images/demo-hotel-and-resort-client-01.svg') }}" class="h-60px" alt=""></a></div>
-            </div>
         </div>
     </div>
 </section>
