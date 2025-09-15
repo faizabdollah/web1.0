@@ -1,0 +1,236 @@
+
+a, 
+.btn-link, 
+.car-title-m h6 a:hover, 
+.featured-car-content > h6 a:hover, 
+.footer-top ul li a:hover, 
+.get-intouch a:hover, 
+.blog-content h5 a:hover, 
+.blog-info-box li a:hover, 
+.control-label span, 
+.angle_arrow i, 
+.contact_detail li a:hover, 
+.team_more_info p a:hover, 
+.error_text_m h2, 
+.search_btn, 
+.popular_post_title a:hover,
+.categories_list ul li a:hover,
+.categories_list ul li a:hover:after, 
+.article_meta ul li a:hover, 
+.articale_header h2 a:hover, 
+.btn.outline, 
+.share_article ul li, 
+.contact-info a:hover, 
+.social-follow a:hover, 
+.radio input[type=radio]:checked + label:before, 
+.checkbox input[type=checkbox]:checked + label:before, 
+.product-listing-content h5 a:hover, 
+.pricing_info .price, .product-column-info .price, 
+.text-primary, 
+.footer_widget ul li a:hover, 
+.header_search button:hover, 
+.header_widgets a:hover, 
+.navbar-default .navbar-nav > li.active a, 
+.navbar-default .navbar-nav > li:focus a, 
+.navbar-default .navbar-nav > li:hover a,  
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:focus, 
+.navbar-default .navbar-nav > .open > a:hover,
+.my_vehicles_list ul.vehicle_listing li a:hover, 
+.dealer_contact_info a:hover, 
+.widget_heading i, 
+.dealers_listing .dealer_info h5 a:hover, 
+.main_features ul li p, 
+.listing_detail_head .price_info p, 
+.listing_other_info button:hover, 
+.compare_info table td i, .compare_info table th i,  
+#accessories i, 
+.price, 
+.inventory_info_list ul li i, 
+.services_info h4 a:hover, 
+.about_info .icon_box,
+.btn.white_outline:hover, .btn.white_outline:focus,
+.breadcrumb-item.active,
+.clients_footer:after,
+.checkout-total td,
+.cart-subtotal,
+.cart_final_total,
+.product-subtotal,
+.card .card-header a {
+	color:#FF2761;
+	fill: #FF2761;
+}
+
+a:hover, a:focus, .btn-link:hover,
+.card .card-header a:hover, .card .card-header a.collapsed:hover,
+.page-item:last-child .page-link:focus, .page-item:last-child .page-link:hover {
+	color:#e30e47;
+	fill: #e30e47;
+}
+
+.btn, 
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a:hover, 
+.recent-tab .nav.nav-tabs li.active a, 
+.fun-facts-m, .featured-icon, 
+.owl-pagination .owl-page.active,
+#testimonial-slider .owl-pagination .owl-page.active, 
+.social-follow.footer-social a:hover, 
+.back-top a, 
+.team_more_info ul li a:hover, 
+.tag_list ul li a:hover, 
+.pagination ul li.current, 
+.pagination ul li:hover,
+.btn.outline:hover, 
+.btn.outline:focus, 
+.share_article ul li:hover, 
+.nav-tabs > li a:hover, 
+.nav-tabs > li a:focus, 
+.label-icon, 
+.navbar-default .navbar-toggle .icon-bar, 
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, 
+.label_icon, 
+.add_compare .checkbox, 
+.search_other, 
+.vs, 
+.td_divider, 
+.search_other_inventory, 
+#other_info, 
+.main_bg, 
+.slider .slider-handle, .slider .slider-selection, 
+.primary-bg,
+.off,
+.member_social_info ul li a:hover,
+.custom-control-input:checked ~ .custom-control-indicator,
+.col_theme,
+input[type="submit"],
+.page-item.active .page-link,
+.product-price .discount,
+#detail_slider2 .flex-direction-nav a:hover:before,
+.list_quick_view a:hover,
+.demo_changer .demo-icon {
+	background-color: #FF2761;
+	fill: #FF2761;
+	border-color:#FF2761;
+}
+.custom-control-input:focus ~ .custom-control-indicator{
+	box-shadow: 0 0 0 1px #fff, 0 0 0 3px #FF2761;
+}
+.btn:hover, .btn:focus, 
+.search_other:hover, 
+#other_info:hover,
+.product-buttons ul li a:hover,
+.navbar-nav .dropdown-item.active, .navbar-nav .dropdown-item:active, .navbar-nav .dropdown-item:hover,
+.timer_block,
+.aside_account ul li a:hover, .aside_account ul li a.active,
+.acc_order_track .order_placed .col_theme,
+.aside_social .social_group_style li a:hover,
+input[type="submit"]:hover, input[type="submit"]:focus,
+.post_tags a:hover,
+ul.page-numbers .page-numbers.current, 
+ul.page-numbers .page-numbers:hover, 
+ul.page-numbers .page-numbers:focus,
+.page-link:focus, .page-link:hover {
+	background-color: #e30e47;
+	fill: #e30e47;
+	border-color:#e30e47;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a:hover, 
+.social-follow.footer-social a:hover, 
+.page-header, 
+.tag_list ul li a:hover, 
+.btn.outline, 
+.share_article ul li, 
+blockquote, 
+.social-follow a:hover, 
+.radio label:before,  
+.navbar-default .navbar-toggle, 
+.owl-buttons div, 
+.about_info .icon_box,
+input[type="text"]:hover, 
+input[type="text"]:focus, 
+input[type="password"]:hover, 
+input[type="password"]:focus, 
+input[type="number"]:hover, 
+input[type="number"]:focus, 
+input[type="email"]:hover, 
+input[type="email"]:focus, 
+input[type="url"]:hover, 
+input[type="url"]:focus, 
+input[type="search"]:hover, 
+input[type="search"]:focus, 
+select:hover, select:focus, 
+textarea:hover, textarea:focus{
+	border-color: #FF2761;
+}
+
+.recent-tab .nav.nav-tabs li.active::after {
+	border-color: #FF2761 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+.td_divider:after {
+	border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0 ) rgba(0, 0, 0, 0 ) #FF2761 ;
+}
+
+.product_tab .nav-tabs .nav-item.show .nav-link, 
+.product_tab .nav-tabs .nav-link.active,
+.product_tab .nav-tabs .nav-link:focus, 
+.product_tab .nav-tabs .nav-link:hover{
+    border-bottom: solid 2px #FF2761 !important;
+    color: #FF2761 !important;	
+}
+.product_tab .nav-tabs .nav-link:focus, 
+.product_tab .nav-tabs .nav-link:hover,
+ul.page-numbers .page-numbers.next:hover, 
+ul.page-numbers .page-numbers.next:focus, 
+ul.page-numbers .page-numbers.prev:hover, 
+ul.page-numbers .page-numbers.prev:focus{
+	background-color:transparent;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, 
+.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .nav-link:focus, 
+.navbar-light .navbar-nav .nav-link:hover,
+.footer_style2 .footer_web a:hover,
+.header_style2 .middle_top_bar .top_right_menu > ul > li > a:hover,
+.footer_style2 .social_group_style li a:hover,
+.post_elements ul li a:hover,
+.post_meta ul li a:hover,
+ul.page-numbers .page-numbers.next:hover, 
+ul.page-numbers .page-numbers.next:focus, 
+ul.page-numbers .page-numbers.prev:hover, 
+ul.page-numbers .page-numbers.prev:focus,
+.footer_style3 .social_group_style li a:hover{
+	color:#FF2761 !important;
+}
+.header_style3 .navbar-light .navbar-nav .active>.nav-link, 
+.header_style3 .navbar-light .navbar-nav .nav-link:hover,
+.header_style3 .navbar-light .navbar-nav .nav-link.active, 
+.header_style3 .navbar-light .navbar-nav .nav-link.show, 
+.header_style3 .navbar-light .navbar-nav .show>.nav-link{
+	color:#fff !important;
+}
+
+
+.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover,
+.header_style3 .navbar-expand-lg,
+.gray_btn_outline:hover, .gray_btn_outline:focus{
+	background-color: #FF2761 !important;
+	fill: #FF2761;
+	border-color:#FF2761 !important;
+}
+
+@media (max-width:767px) {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+	color:#FF2761;	
+}
+
+
+}

@@ -16,6 +16,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+use App\Http\Controllers\Admin\ModifierInfoController;
+
+Route::get('/updateinfo', [ModifierInfoController::class, 'index'])->middleware(['auth', 'verified'])->name('admin');
+
+Route::post('/updateinfo', [ModifierInfoController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.update');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
