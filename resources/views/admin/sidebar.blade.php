@@ -1,12 +1,11 @@
-<body>
 <aside class="app-side" id="app-side">
 					<!-- BEGIN .side-content -->
 					<div class="side-content ">
 						<!-- BEGIN .user-profile -->
 						<div class="user-profile">
 					<span style="font-size:90px;" class="icon-profile-male" ></span>
-						  <h6 class="profile-name"> echo $row_fournisseur_sidebar['nom']</h6>
-					  </div>
+						 <h6 class="profile-name">{{ \App\Models\Fournisseur::where('mail', \Illuminate\Support\Facades\Auth::user()->email)->first()->nom ?? \Illuminate\Support\Facades\Auth::user()->name ?? 'Admin' }}</h6>
+						</div>
 						<!-- END .user-profile -->
 						<!-- BEGIN .side-nav -->
 						<nav class="side-nav">
@@ -46,13 +45,13 @@
 										<li>
 									    	<a href="../index.php" target="_blank">Consulter mon Site</a>
 									    </li>
-										
+
 										<li>
-											<a href='modifier_profil.php'>Modifier mes infos</a>
+											<a href="{{ route('admin') }}">Modifier mes infos</a>
 										</li>
                                         <li>
-									    	<a href='mes_produit_sv.php'>Mes produits</a>
-									    </li>
+                                            <a href="{{ route('admin.mes-produits') }}">Mes produits</a>
+                                        </li>
                                         <li>
 									    	<a href='ajouter_produit_sv.php'>Ajouter produit</a>
 									    </li>
@@ -143,4 +142,3 @@
 					</div>
 					<!-- END: .side-content -->
 				</aside>
-</body>

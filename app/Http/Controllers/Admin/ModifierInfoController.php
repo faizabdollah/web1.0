@@ -11,13 +11,13 @@ class ModifierInfoController extends Controller
 {
     public function index()
     {
-        $fournisseur = Fournisseur::first();
+        $fournisseur = Fournisseur::where('mail', Auth::user()->email)->firstOrFail();
         return view('admin.ModifierInfo', compact('fournisseur'));
     }
 
     public function update(Request $request)
     {
-        $fournisseur = Fournisseur::first();
+        $fournisseur = Fournisseur::where('mail', Auth::user()->email)->firstOrFail();
 
         // Prepend http:// to site_web if provided without protocol
         if ($request->filled('site_web') && !str_starts_with($request->site_web, 'http')) {
@@ -33,7 +33,7 @@ class ModifierInfoController extends Controller
             'tel1' => 'nullable|string|max:20',
             'tel2' => 'nullable|string|max:20',
             'mail2' => 'nullable|email|max:255',
-            'site_web' => 'required|url|max:255',
+            'site_web' => 'nullable|url|max:255',
             'adresse' => 'nullable|string',
             'description_p' => 'nullable|string',
             'description' => 'nullable|string',
@@ -55,7 +55,7 @@ class ModifierInfoController extends Controller
             'nom_l4' => 'nullable|string|max:255',
         ]);
 
-        $fournisseur->update($request->all());
+        $fournisseur->update($request->except(['_token', '_method']));
 
         return redirect()->back()->with('success', 'Informations modifiées avec succès.');
     }
