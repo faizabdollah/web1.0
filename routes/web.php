@@ -29,6 +29,19 @@ Route::middleware('auth')->group(function () {
 });
 
 use App\Http\Controllers\Admin\MesProduitController;
+use App\Http\Controllers\Admin\DetailProduitController;
+use App\Http\Controllers\Admin\AjouterProduitImageController;
+
+Route::get('/mes-produits', [MesProduitController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.mes-produits');
+
+Route::get('/admin/detail-produit/{id}', [DetailProduitController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.detail-produit');
+
+Route::get('/admin/ajouter-produit-image/{produit_id}', [AjouterProduitImageController::class, 'create'])->middleware(['auth', 'verified'])->name('admin.ajouter-produit-image.create');
+Route::post('/admin/ajouter-produit-image/{produit_id}', [AjouterProduitImageController::class, 'store'])->middleware(['auth', 'verified'])->name('admin.ajouter-produit-image.store');
+
+Route::get('/mes-produits', [MesProduitController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.mes-produits');
+
+Route::get('/admin/detail-produit/{id}', [DetailProduitController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.detail-produit');
 
 Route::get('/mes-produits', [MesProduitController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.mes-produits');
 

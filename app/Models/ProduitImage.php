@@ -12,7 +12,11 @@ class ProduitImage extends Model
     protected $table = 'produit_image';
 
     protected $fillable = [
+        'mail',
         'produit_id',
+        'page',
         'img',
     ];
+
+    public $timestamps = false;
 }

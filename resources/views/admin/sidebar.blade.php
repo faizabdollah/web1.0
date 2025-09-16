@@ -43,7 +43,7 @@
 									<ul aria-expanded="false" class="collapse in">
 
 										<li>
-									    	<a href="../index.php" target="_blank">Consulter mon Site</a>
+									    	<a href="/" target="_blank">Consulter mon Site</a>
 									    </li>
 
 										<li>
