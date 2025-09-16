@@ -187,7 +187,7 @@
                     <div class="col-lg-5 md-mb-50px" data-anime='{ "el": "childs", "opacity": [0, 1], "rotateY": [-90, 0], "rotateZ": [-10, 0], "translateY": [80, 0], "translateZ": [50, 0], "staggervalue": 200, "duration": 800, "delay": 200, "easing": "easeOutCirc" }'>
                         <span class="mb-10px text-base-color fw-500 d-block">about </span>
                         <h2 class="alt-font text-dark-gray ls-minus-2px">{{ $fournisseurs->raison_sociale }}</h2>
-                        <p class="w-80 xl-w-100 mb-35px xs-mb-10px">{{ $fournisseurs->description_p }}</p>
+                        <p class="w-80 xl-w-100 mb-35px xs-mb-10px">{!! $fournisseurs->description_p !!}</p>
                         <div class="d-inline-block w-100">
                             <a href="/about" class="btn btn-extra-large btn-switch-text btn-dark-gray btn-box-shadow btn-round-edge d-inline-block align-middle me-30px xs-me-10px xs-mt-20px">
                                 <span>

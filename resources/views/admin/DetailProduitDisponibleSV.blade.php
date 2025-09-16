@@ -67,8 +67,7 @@
                         <div class="card-body d-flex flex-wrap gap-2">
                             @if($images->count() > 0)
                                 @foreach($images as $image)
-                                    <a href="{{ url('admin/produit-img-sup/' . $image->id . '?produit_id=' . $produit->id) }}"
-                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette image ?');">
+                                    <a class="delete-image" data-url="{{ url('admin/produit-img-sup/' . $image->id) }}">
                                         <img class="img-square" src="{{ asset($image->img) }}" alt="Product Image">
                                     </a>
                                 @endforeach
@@ -108,3 +107,33 @@
     </div>
 
 @endsection
+
+<!-- SweetAlert2 CSS and JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+       const deleteLinks = document.querySelectorAll('.delete-image');
+       deleteLinks.forEach(function(link) {
+           link.addEventListener('click', function(e) {
+               e.preventDefault();
+               const url = this.getAttribute('data-url');
+               Swal.fire({
+                   title: 'Êtes-vous sûr?',
+                   text: 'Cette image sera supprimée définitivement!',
+                   icon: 'warning',
+                   showCancelButton: true,
+                   confirmButtonColor: '#d33',
+                   cancelButtonColor: '#3085d6',
+                   confirmButtonText: 'Oui, supprimer!',
+                   cancelButtonText: 'Annuler'
+               }).then((result) => {
+                   if (result.isConfirmed) {
+                       window.location.href = url;
+                   }
+               });
+           });
+       });
+   });
+</script>

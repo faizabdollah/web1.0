@@ -17,4 +17,20 @@ class DetailProduitController extends Controller
 
         return view('admin.DetailProduitDisponibleSV', compact('produit', 'images'));
     }
+
+    public function destroyImage($id)
+    {
+        $image = ProduitImage::where('id', $id)->where('mail', Auth::user()->email)->firstOrFail();
+
+        // Delete the physical file
+        $filePath = public_path($image->img);
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+
+        // Delete the record
+        $image->delete();
+
+        return redirect()->back()->with('success', 'Image supprimée avec succès.');
+    }
 }

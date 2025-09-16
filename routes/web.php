@@ -10,6 +10,9 @@ use App\Models\Produit; // Make sure you have a Produit model
 use App\Models\ProduitImage; // Make sure you have a ProduitImage model
 use App\Models\ImageCategory; // Make sure you have an ImageCategory model
 use App\Models\TextCategory; // Make sure you have a TextCategory model
+use App\Http\Controllers\Admin\MesProduitController;
+use App\Http\Controllers\Admin\DetailProduitController;
+use App\Http\Controllers\Admin\AjouterProduitImageController;
 
 
 Route::get('/dashboard', function () {
@@ -28,13 +31,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-use App\Http\Controllers\Admin\MesProduitController;
-use App\Http\Controllers\Admin\DetailProduitController;
-use App\Http\Controllers\Admin\AjouterProduitImageController;
+
 
 Route::get('/mes-produits', [MesProduitController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.mes-produits');
 
 Route::get('/admin/detail-produit/{id}', [DetailProduitController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.detail-produit');
+
+Route::get('/admin/produit-img-sup/{id}', [DetailProduitController::class, 'destroyImage'])->middleware(['auth', 'verified'])->name('admin.produit-img-sup');
 
 Route::get('/admin/ajouter-produit-image/{produit_id}', [AjouterProduitImageController::class, 'create'])->middleware(['auth', 'verified'])->name('admin.ajouter-produit-image.create');
 Route::post('/admin/ajouter-produit-image/{produit_id}', [AjouterProduitImageController::class, 'store'])->middleware(['auth', 'verified'])->name('admin.ajouter-produit-image.store');
