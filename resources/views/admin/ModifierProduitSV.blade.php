@@ -48,12 +48,7 @@
                             <form action="{{ route('admin.modifier-produit.update', $produit->id) }}" method="POST" name="mes_produit" id="mes_produit" enctype="multipart/form-data" onsubmit="return syncCKEditor();">
                                 @csrf
                                 <div class="card-body">
-                                    <div class="form-group row gutters">
-                                        <label for="sous_categorie" class="col-sm-3 col-form-label" >Sous catégorie:</label>
-                                        <div class="col-sm-6">
-                                            <input disabled type="text" value="{{ $produit->categorie }}" id="sous_categorie" name="sous_categorie" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-                                        </div>
-                                    </div>
+                                    
 
                                     <div class="form-group row gutters">
                                       <label for="categorie" class="col-sm-3 col-form-label">Choisir une categorie :</label>
