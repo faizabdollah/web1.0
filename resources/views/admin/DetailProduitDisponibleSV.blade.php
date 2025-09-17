@@ -94,8 +94,8 @@
                             </div>
 
                             <div class="card-body">
-                                <a href="{{ url('admin/modifier-produit/' . $produit->id) }}" class="btn btn-primary">Modifier</a>
-                                <a onclick="javascript: return confirm('Êtes-vous sûr de vouloir supprimer {{ $produit->nom }} ?');" href="{{ url('admin/supprimer-produit/' . $produit->id) }}" class="btn btn-primary">Supprimer</a>
+                                <a href="{{ route('admin.modifier-produit.edit', $produit->id) }}" class="btn btn-primary">Modifier</a>
+                                <a class="delete-product btn btn-danger" data-url="{{ url('admin/supprimer-produit/' . $produit->id) }}" style="color: white;">Supprimer</a>
                                 <br>
                             </div>
                         </div>
@@ -134,6 +134,29 @@
                    }
                });
            });
+
+           // Product delete confirmation
+           const deleteProductBtn = document.querySelector('.delete-product');
+           if (deleteProductBtn) {
+               deleteProductBtn.addEventListener('click', function(e) {
+                   e.preventDefault();
+                   const url = this.getAttribute('data-url');
+                   Swal.fire({
+                       title: 'Êtes-vous sûr?',
+                       text: 'Ce produit sera supprimé définitivement!',
+                       icon: 'warning',
+                       showCancelButton: true,
+                       confirmButtonColor: '#d33',
+                       cancelButtonColor: '#3085d6',
+                       confirmButtonText: 'Oui, supprimer!',
+                       cancelButtonText: 'Annuler'
+                   }).then((result) => {
+                       if (result.isConfirmed) {
+                           window.location.href = url;
+                       }
+                   });
+               });
+           }
        });
    });
 </script>

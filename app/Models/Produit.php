@@ -51,6 +51,7 @@ class Produit extends Model
         'img9',
         'img10',
         'video',
+        'video_img',
         'raison_sociale',
         'a_class',
         'i_class',
@@ -65,4 +66,6 @@ class Produit extends Model
         'metatitre',
         'metadescription',
     ];
+
+    public $timestamps = false;
 }
