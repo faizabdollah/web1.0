@@ -46,6 +46,13 @@ Route::post('/admin/ajouter-produit-image/{produit_id}', [AjouterProduitImageCon
 Route::get('/admin/modifier-produit/{id}', [ModifierProduitController::class, 'edit'])->middleware(['auth', 'verified'])->name('admin.modifier-produit.edit');
 Route::post('/admin/modifier-produit/{id}', [ModifierProduitController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.modifier-produit.update');
 
+Route::get('/admin/supprimer-produit/{id}', [DetailProduitController::class, 'destroy'])->middleware(['auth', 'verified'])->name('admin.supprimer-produit');
+
+Route::get('/admin/modifier-image/{id}', [DetailProduitController::class, 'showImageForm'])->middleware(['auth', 'verified'])->name('admin.modifier-image');
+Route::post('/admin/modifier-image/{id}', [DetailProduitController::class, 'updateMainImage'])->middleware(['auth', 'verified'])->name('admin.modifier-image.update');
+
+Route::post('/admin/update-main-image/{id}', [DetailProduitController::class, 'updateMainImage'])->middleware(['auth', 'verified'])->name('admin.update-main-image');
+
 Route::get('/mes-produits', [MesProduitController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.mes-produits');
 
 Route::get('/admin/detail-produit/{id}', [DetailProduitController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.detail-produit');

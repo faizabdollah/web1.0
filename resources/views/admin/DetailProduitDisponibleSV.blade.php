@@ -21,10 +21,10 @@
                             <div class="page-icon">
                                 <i class="icon-laptop_windows"></i>
                             </div>
-                            <div class="page-title">
-                                <h5>{{ $produit->nom_sous_categorie }}</h5>
-                                <h6 class="sub-heading">&nbsp;</h6>
-                            </div>
+                                <div class="page-title">
+                                    <h5>{{ $produit->nom_sous_categorie }}</h5>
+                                    <h6 class="sub-heading">&nbsp;</h6>
+                                </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                             <div class="right-actions">
@@ -46,7 +46,6 @@
 
                         <div  class="card">
                             <a href="{{ url('admin/modifier-image/' . $produit->id) }}"> <img style="height:500px; " class="card-img-top" src="{{ asset($produit->img) }}" alt="Card image cap"></a>
-
                         </div>
 
                         <style>
@@ -95,7 +94,7 @@
 
                             <div class="card-body">
                                 <a href="{{ route('admin.modifier-produit.edit', $produit->id) }}" class="btn btn-primary">Modifier</a>
-                                <a class="delete-product btn btn-danger" data-url="{{ url('admin/supprimer-produit/' . $produit->id) }}" style="color: white;">Supprimer</a>
+                                <a class="delete-product btn btn-danger" data-url="{{ route('admin.supprimer-produit', $produit->id) }}" style="color: white;">Supprimer</a>
                                 <br>
                             </div>
                         </div>
@@ -134,29 +133,29 @@
                    }
                });
            });
-
-           // Product delete confirmation
-           const deleteProductBtn = document.querySelector('.delete-product');
-           if (deleteProductBtn) {
-               deleteProductBtn.addEventListener('click', function(e) {
-                   e.preventDefault();
-                   const url = this.getAttribute('data-url');
-                   Swal.fire({
-                       title: 'Êtes-vous sûr?',
-                       text: 'Ce produit sera supprimé définitivement!',
-                       icon: 'warning',
-                       showCancelButton: true,
-                       confirmButtonColor: '#d33',
-                       cancelButtonColor: '#3085d6',
-                       confirmButtonText: 'Oui, supprimer!',
-                       cancelButtonText: 'Annuler'
-                   }).then((result) => {
-                       if (result.isConfirmed) {
-                           window.location.href = url;
-                       }
-                   });
-               });
-           }
        });
+
+       // Product delete confirmation
+       const deleteProductBtn = document.querySelector('.delete-product');
+       if (deleteProductBtn) {
+           deleteProductBtn.addEventListener('click', function(e) {
+               e.preventDefault();
+               const url = this.getAttribute('data-url');
+               Swal.fire({
+                   title: 'Êtes-vous sûr?',
+                   text: 'Ce produit sera supprimé définitivement!',
+                   icon: 'warning',
+                   showCancelButton: true,
+                   confirmButtonColor: '#d33',
+                   cancelButtonColor: '#3085d6',
+                   confirmButtonText: 'Oui, supprimer!',
+                   cancelButtonText: 'Annuler'
+               }).then((result) => {
+                   if (result.isConfirmed) {
+                       window.location.href = url;
+                   }
+               });
+           });
+       }
    });
 </script>
