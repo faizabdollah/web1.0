@@ -62,7 +62,7 @@
 									    	<a href='ajouter_blog_sv.php'>Ajouter blog</a>
 									    </li>
 									    <li>
-									    	<a href='mes_categorie_sv.php'>Mes categorie</a>
+									        <a href="{{ route('admin.categories.index') }}">Mes catégories</a>
 									    </li>
 									    <li>
 									    	<a href='mes_sous_categorie_sv.php'>Mes sous categorie</a>

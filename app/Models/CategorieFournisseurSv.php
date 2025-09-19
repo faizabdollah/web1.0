@@ -9,6 +9,8 @@ class CategorieFournisseurSv extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $table = 'categorie_fournisseur_sv';
 
     protected $fillable = [

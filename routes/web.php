@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\MesProduitController;
 use App\Http\Controllers\Admin\DetailProduitController;
 use App\Http\Controllers\Admin\AjouterProduitImageController;
 use App\Http\Controllers\Admin\ModifierProduitController;
+use App\Http\Controllers\Admin\CategorieFournisseurSvController;
 
 
 Route::get('/dashboard', function () {
@@ -36,6 +37,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/mes-produits', [MesProduitController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.mes-produits');
 
+Route::get('/admin/ajouter-categorie', [CategorieFournisseurSvController::class, 'create'])->middleware(['auth', 'verified'])->name('admin.ajouter-categorie');
+Route::post('/admin/categories', [CategorieFournisseurSvController::class, 'store'])->middleware(['auth', 'verified'])->name('admin.categories.store');
+
 Route::get('/admin/detail-produit/{id}', [DetailProduitController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.detail-produit');
 
 Route::get('/admin/produit-img-sup/{id}', [DetailProduitController::class, 'destroyImage'])->middleware(['auth', 'verified'])->name('admin.produit-img-sup');
@@ -47,6 +51,13 @@ Route::get('/admin/modifier-produit/{id}', [ModifierProduitController::class, 'e
 Route::post('/admin/modifier-produit/{id}', [ModifierProduitController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.modifier-produit.update');
 
 Route::get('/admin/supprimer-produit/{id}', [DetailProduitController::class, 'destroy'])->middleware(['auth', 'verified'])->name('admin.supprimer-produit');
+
+Route::get('/admin/categories', [CategorieFournisseurSvController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.categories.index');
+Route::get('/admin/categories/create', [CategorieFournisseurSvController::class, 'create'])->middleware(['auth', 'verified'])->name('admin.categories.create');
+Route::post('/admin/categories', [CategorieFournisseurSvController::class, 'store'])->middleware(['auth', 'verified'])->name('admin.categories.store');
+Route::get('/admin/categories/{id}/edit', [CategorieFournisseurSvController::class, 'edit'])->middleware(['auth', 'verified'])->name('admin.categories.edit');
+Route::put('/admin/categories/{id}', [CategorieFournisseurSvController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.categories.update');
+Route::delete('/admin/categories/{id}', [CategorieFournisseurSvController::class, 'destroy'])->middleware(['auth', 'verified'])->name('admin.categories.destroy');
 
 Route::get('/admin/modifier-image/{id}', [DetailProduitController::class, 'showImageForm'])->middleware(['auth', 'verified'])->name('admin.modifier-image');
 Route::post('/admin/modifier-image/{id}', [DetailProduitController::class, 'updateMainImage'])->middleware(['auth', 'verified'])->name('admin.modifier-image.update');
