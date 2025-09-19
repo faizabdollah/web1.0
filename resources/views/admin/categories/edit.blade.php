@@ -59,11 +59,7 @@
                                         </div>
                                     @endif
 
-                                    @if (session('success'))
-                                        <div class="alert alert-success">
-                                            {{ session('success') }}
-                                        </div>
-                                    @endif
+                                    {{-- Success message handled by SweetAlert --}}
 
                                     <div class="form-group row gutters">
                                         <label for="nom_categorie" class="col-sm-3 col-form-label">Nom de la catégorie:</label>

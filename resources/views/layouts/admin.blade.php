@@ -39,6 +39,7 @@
 		<script src="{{ asset('MA-admi/js/jquery.js') }}"></script>
 		<script src="{{ asset('MA-admi/js/tether.min.js') }}"></script>
 		<script src="{{ asset('MA-admi/js/bootstrap.min.js') }}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="{{ asset('MA-admi/vendor/unifyMenu/unifyMenu.js') }}"></script>
 		<script src="{{ asset('MA-admi/vendor/onoffcanvas/onoffcanvas.js') }}"></script>
 		<script src="{{ asset('MA-admi/js/moment.js') }}"></script>

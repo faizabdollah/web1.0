@@ -81,10 +81,14 @@ class CategorieFournisseurSvController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $category = CategorieFournisseurSv::findOrFail($id);
         $category->delete();
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Catégorie supprimée avec succès.']);
+        }
 
         return redirect()->back()
                         ->with('success', 'Categorie supprimée avec succès.');

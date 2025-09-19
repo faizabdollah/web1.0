@@ -46,11 +46,7 @@
                                 <h3>Liste des Catégories</h3>
                             </div>
                             <div class="card-body">
-                                @if (session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
+                                {{-- Success message handled by SweetAlert --}}
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
@@ -71,10 +67,10 @@
                                                     <td>{{ $category->categorie ?? 'N/A' }}</td>
                                                     <td>
                                                         <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-warning btn-sm">Modifier</a>
-                                                        <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie?')">
+                                                        <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" style="display: inline;">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                                                            <button type="button" class="btn btn-danger btn-sm delete-btn">Supprimer</button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -103,3 +99,39 @@
     <!-- END: .main-footer -->
 </div>
 @endsection
+
+@if (session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Succès!',
+        text: '{{ session('success') }}',
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.delete-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const form = this.closest('form');
+                Swal.fire({
+                    title: 'Êtes-vous sûr?',
+                    text: "Vous ne pourrez pas revenir en arrière!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Oui, supprimer!',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>
