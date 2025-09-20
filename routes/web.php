@@ -37,6 +37,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/mes-produits', [MesProduitController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.mes-produits');
 
+Route::get('/admin/ajouter-produit', [MesProduitController::class, 'create'])->middleware(['auth', 'verified'])->name('admin.produits.create');
+Route::post('/admin/produits', [MesProduitController::class, 'store'])->middleware(['auth', 'verified'])->name('admin.produits.store');
+
 Route::get('/admin/ajouter-categorie', [CategorieFournisseurSvController::class, 'create'])->middleware(['auth', 'verified'])->name('admin.ajouter-categorie');
 Route::post('/admin/categories', [CategorieFournisseurSvController::class, 'store'])->middleware(['auth', 'verified'])->name('admin.categories.store');
 

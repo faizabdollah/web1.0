@@ -53,7 +53,7 @@
                                             <a href="{{ route('admin.mes-produits') }}">Mes produits</a>
                                         </li>
                                         <li>
-									    	<a href='ajouter_produit_sv.php'>Ajouter produit</a>
+									    	<a href='{{ route('admin.produits.create') }}'>Ajouter produit</a>
 									    </li>
                                         <li>
 									    	<a href='mes_blog_sv.php'>Mes blogs</a>
