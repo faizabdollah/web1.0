@@ -167,13 +167,6 @@
                                     </div>
 
                                     <div class="form-group row gutters">
-                                        <label for="img" class="col-sm-3 col-form-label">Image:</label>
-                                        <div class="col-sm-6">
-                                            <input type="file" name="img" id="img" class="form-control" accept="image/*">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row gutters">
                                         <label for="video" class="col-sm-3 col-form-label">Video:</label>
                                         <div class="col-sm-6">
                                             <textarea name="video" id="video" class="form-control" rows="3" placeholder="Lien video"></textarea>

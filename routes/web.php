@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\DetailProduitController;
 use App\Http\Controllers\Admin\AjouterProduitImageController;
 use App\Http\Controllers\Admin\ModifierProduitController;
 use App\Http\Controllers\Admin\CategorieFournisseurSvController;
+use App\Http\Controllers\Admin\TextAboutController;
+use App\Http\Controllers\Admin\ImageAboutController;
 
 
 Route::get('/dashboard', function () {
@@ -62,6 +64,12 @@ Route::get('/admin/categories/{id}/edit', [CategorieFournisseurSvController::cla
 Route::put('/admin/categories/{id}', [CategorieFournisseurSvController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.categories.update');
 Route::delete('/admin/categories/{id}', [CategorieFournisseurSvController::class, 'destroy'])->middleware(['auth', 'verified'])->name('admin.categories.destroy');
 
+Route::get('/admin/textabouts/{id}/edit', [TextAboutController::class, 'edit'])->middleware(['auth', 'verified'])->name('admin.textabouts.edit');
+Route::put('/admin/textabouts/{id}', [TextAboutController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.textabouts.update');
+
+Route::get('/admin/imageabouts/{id}/edit', [ImageAboutController::class, 'edit'])->middleware(['auth', 'verified'])->name('admin.imageabouts.edit');
+Route::put('/admin/imageabouts/{id}', [ImageAboutController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.imageabouts.update');
+
 Route::get('/admin/modifier-image/{id}', [DetailProduitController::class, 'showImageForm'])->middleware(['auth', 'verified'])->name('admin.modifier-image');
 Route::post('/admin/modifier-image/{id}', [DetailProduitController::class, 'updateMainImage'])->middleware(['auth', 'verified'])->name('admin.modifier-image.update');
 
@@ -78,26 +86,10 @@ require __DIR__.'/auth.php';
 // Simple routes for main pages
 Route::get('/about', function () {
     $text_about = \App\Models\text_about::first();
-    $image_abouts = \App\Models\image_about::first();
-    $img_sv = \App\Models\ImgSv::first();
-    $image_category = \App\Models\ImageCategory::first();
-    $text_category = \App\Models\TextCategory::first();
-
-    // Map img_sv fields to $image_about structure expected by view
-    $image_about = (object) [
-        'img1' => $img_sv ? $img_sv->about1 : null,
-        'img2' => $img_sv ? $img_sv->about2 : null,
-        'img3' => $img_sv ? $img_sv->produit : null, // Placeholder for img3; adjust based on data
-        'img4' => $img_sv ? $img_sv->produit : null, // Placeholder for img4
-        'img5' => $img_sv ? $img_sv->contact1 : null, // Placeholder for img5
-        // Add more if needed for img6-img10
-    ];
-
-    // Create collections for looped views; adjust based on actual data structure
+    $image_about = \App\Models\image_about::first();
+    $image_abouts = $image_about;
     $galerie = \App\Models\Galerie::all();
-
-    $reference = \App\Models\Reference::all(); // From dedicated reference table
-
+    $reference = \App\Models\Reference::all();
     return view('about', compact('text_about', 'image_about', 'image_abouts', 'galerie', 'reference'));
 })->name('about');
 

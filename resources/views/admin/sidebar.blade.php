@@ -55,17 +55,8 @@
                                         <li>
 									    	<a href='{{ route('admin.produits.create') }}'>Ajouter produit</a>
 									    </li>
-                                        <li>
-									    	<a href='mes_blog_sv.php'>Mes blogs</a>
-									    </li>
-                                        <li>
-									    	<a href='ajouter_blog_sv.php'>Ajouter blog</a>
-									    </li>
 									    <li>
 									        <a href="{{ route('admin.categories.index') }}">Mes catégories</a>
-									    </li>
-									    <li>
-									    	<a href='mes_sous_categorie_sv.php'>Mes sous categorie</a>
 									    </li>
 										<li>
 									    	<a href='slider_affi_sv.php'>Mes sliders</a>
@@ -107,8 +98,14 @@
 									    	<a href='modifier_text_sv_en.php'>Modifier Text SV EN</a>
 									    </li>
 										<li>
-									    	<a href='modifier_text_sv_ar.php'>Modifier Text SV AR</a>
-									    </li>
+											<a href='modifier_text_sv_ar.php'>Modifier Text SV AR</a>
+										</li>
+										<li>
+											<a href="{{ route('admin.textabouts.edit', \App\Models\text_about::first()->id) }}">Modifier TextAbout</a>
+										</li>
+										<li>
+											<a href="{{ route('admin.imageabouts.edit', \App\Models\image_about::first()->id) }}">Modifier ImageAbout</a>
+										</li>
 										<li>
 									    	<a href='modif_res_soc.php'>Modifier réseaux sociaux</a>
 									    </li>
