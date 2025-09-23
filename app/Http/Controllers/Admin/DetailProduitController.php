@@ -103,6 +103,6 @@ class DetailProduitController extends Controller
         // Delete the product
         $produit->delete();
 
-        return redirect()->route('admin.mes-produits')->with('success', 'Produit supprimé avec succès.');
+        return redirect()->route('admin.produits.index')->with('success', 'Produit supprimé avec succès.');
     }
 }

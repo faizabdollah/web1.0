@@ -45,7 +45,7 @@
                     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
 
                         <div  class="card">
-                            <a href="{{ url('admin/modifier-image/' . $produit->id) }}"> <img style="height:500px; " class="card-img-top" src="{{ asset($produit->img) }}" alt="Card image cap"></a>
+                            <a href="{{ route('admin.modifier-image.edit', $produit->id) }}"> <img style="height:500px; " class="card-img-top" src="{{ asset($produit->img) }}" alt="Card image cap"></a>
                         </div>
 
                         <style>
@@ -94,7 +94,7 @@
 
                             <div class="card-body">
                                 <a href="{{ route('admin.modifier-produit.edit', $produit->id) }}" class="btn btn-primary">Modifier</a>
-                                <a class="delete-product btn btn-danger" data-url="{{ route('admin.supprimer-produit', $produit->id) }}" style="color: white;">Supprimer</a>
+                                <a class="delete-product btn btn-danger" data-url="{{ route('admin.produits.delete', $produit->id) }}" style="color: white;">Supprimer</a>
                                 <br>
                             </div>
                         </div>

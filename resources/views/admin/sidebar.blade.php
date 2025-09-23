@@ -47,10 +47,10 @@
 									    </li>
 
 										<li>
-											<a href="{{ route('admin') }}">Modifier mes infos</a>
+											<a href="{{ route('admin.updateinfo') }}">Modifier mes infos</a>
 										</li>
                                         <li>
-                                            <a href="{{ route('admin.mes-produits') }}">Mes produits</a>
+                                            <a href="{{ route('admin.produits.index') }}">Mes produits</a>
                                         </li>
                                         <li>
 									    	<a href='{{ route('admin.produits.create') }}'>Ajouter produit</a>
@@ -59,10 +59,10 @@
 									        <a href="{{ route('admin.categories.index') }}">Mes catégories</a>
 									    </li>
 										<li>
-									    	<a href='slider_affi_sv.php'>Mes sliders</a>
+									    	<a href="{{ route('admin.sliders.index') }}">Mes sliders</a>
 									    </li>
 										<li>
-									    	<a href='slider_ajou_sv.php'>Ajouter slider</a>
+									    	<a href="{{ route('admin.sliders.create') }}">Ajouter slider</a>
 									    </li>
 										<li>
 											<a href='modifier_image_logo.php'>Modifier Logo</a>

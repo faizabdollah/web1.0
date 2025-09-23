@@ -46,7 +46,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header"></div>
-                        <form action="{{ route('admin.update') }}" method="POST" name="mes_produit" id="mes_produit"
+                        <form action="{{ route('admin.updateinfo.update') }}" method="POST" name="mes_produit" id="mes_produit"
                             enctype="multipart/form-data">
                             @csrf
                         <div class="card-body">

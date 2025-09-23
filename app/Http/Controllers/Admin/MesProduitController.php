@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Produit;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Models\ProduitImage;
 
 class MesProduitController extends Controller
 {
@@ -21,6 +22,14 @@ class MesProduitController extends Controller
     {
         $categories = \App\Models\CategorieFournisseurSv::all();
         return view('admin.AjouterProduit', compact('categories'));
+    }
+
+    /**
+     * Display product details by redirecting.
+     */
+    public function show($id)
+    {
+        return redirect()->route('admin.detail-produit', $id);
     }
 
     public function store(Request $request)
@@ -84,7 +93,51 @@ class MesProduitController extends Controller
             ]);
         }
 
-        return redirect()->route('admin.mes-produits')
+        return redirect()->route('admin.produits.index')
                         ->with('success', 'Produit ajouté avec succès.');
+    }
+    /**
+     * Delete a product and its images.
+     */
+    public function destroy($id)
+    {
+        $produit = Produit::where('id', $id)
+            ->where('mail', Auth::user()->email)
+            ->firstOrFail();
+
+        // Delete gallery images
+        $images = ProduitImage::where('produit_id', $id)->get();
+        foreach ($images as $image) {
+            $filePath = public_path($image->img);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+            $image->delete();
+        }
+
+        // Delete main product images (img, img2...img10)
+        $imgFields = ['img','img2','img3','img4','img5','img6','img7','img8','img9','img10'];
+        foreach ($imgFields as $field) {
+            if ($produit->$field) {
+                $filePath = public_path($produit->$field);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+            }
+        }
+
+        // Delete video image
+        if ($produit->video_img) {
+            $filePath = public_path($produit->video_img);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        // Delete product record
+        $produit->delete();
+
+        return redirect()->route('admin.produits.index')
+                         ->with('success', 'Produit supprimé avec succès.');
     }
 }

@@ -61,7 +61,14 @@
                                                     <td>{{ $produit->nom }}</td>
                                                     <td>{{ $produit->empl }}</td>
                                                     <td>{{ $produit->ref }}</td>
-                                                    <td><a href="{{ route('admin.detail-produit', $produit->id) }}"><button type="button" class="btn btn-outline-info btn-rounded">Détail</button></a></td>
+                                                    <td>
+                                                        <a href="{{ route('admin.detail-produit', $produit->id) }}">
+                                                            <button type="button" class="btn btn-outline-info btn-rounded">Détail</button>
+                                                        </a>
+                                                        <a class="delete-product btn btn-outline-danger btn-rounded" data-url="{{ route('admin.produits.delete', $produit->id) }}">
+                                                            Supprimer
+                                                        </a>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

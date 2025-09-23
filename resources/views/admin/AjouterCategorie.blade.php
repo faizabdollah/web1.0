@@ -81,7 +81,7 @@
                                     <div class="form-group row gutters">
                                         <div class="col-sm-10">
                                             <button type="submit" class="btn btn-primary">Ajouter Catégorie</button>
-                                            <a class="btn btn-secondary" href="{{ route('admin.mes-produits') }}">Retour</a>
+                                            <a class="btn btn-secondary" href="{{ route('admin.produits.index') }}">Retour</a>
                                         </div>
                                     </div>
                                 </div>

@@ -33,7 +33,7 @@
 </section>
 <!-- end section -->
 <!-- start section -->
-<section class="cover-background position-relative overflow-visible" style="background-image: url('{{ asset($image_abouts->img2) }}')">
+<section class="cover-background position-relative overflow-visible" style="background-image: url('{{ asset($image_about->img2) }}')">
     <div class="container">
         <div class="row align-items-center overlap-section mb-1">
             <div class="col-12 position-relative" data-anime='{ "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
@@ -91,7 +91,7 @@
             <div class="col" data-bottom-top="transform: translateY(40px)" data-top-bottom="transform: translateY(-40px)">
                 <div class="services-box-style-01 hover-box md-mb-30px">
                     <div class="position-relative box-image border-radius-6px">
-                        <img class="w-100" src="{{ asset($image_abouts->img3) }}" alt="">
+                        <img class="w-100" src="{{ asset($image_about->img3) }}" alt="">
                     </div>
                     <div class="p-30px last-paragraph-no-margin text-center">
                         <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray">{{ $text_about->text16 }}</span>
@@ -104,7 +104,7 @@
             <div class="col" data-bottom-top="transform: translateY(-40px)" data-top-bottom="transform: translateY(40px)">
                 <div class="services-box-style-01 hover-box md-mb-30px">
                     <div class="position-relative box-image border-radius-6px">
-                        <img class="w-100" src="{{ asset($image_abouts->img4) }}" alt="">
+                        <img class="w-100" src="{{ asset($image_about->img4) }}" alt="">
                     </div>
                     <div class="p-30px last-paragraph-no-margin text-center">
                         <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray">{{ $text_about->text18 }}</span>
@@ -117,7 +117,7 @@
             <div class="col" data-bottom-top="transform: translateY(40px)" data-top-bottom="transform: translateY(-40px)">
                 <div class="services-box-style-01 hover-box">
                     <div class="position-relative box-image border-radius-6px">
-                        <img class="w-100" src="{{ asset($image_abouts->img5) }}" alt="">
+                        <img class="w-100" src="{{ asset($image_about->img5) }}" alt="">
                     </div>
                     <div class="p-30px last-paragraph-no-margin text-center">
                         <span class="d-inline-block fs-22 alt-font ls-minus-05px text-dark-gray">{{ $text_about->text20 }}</span>

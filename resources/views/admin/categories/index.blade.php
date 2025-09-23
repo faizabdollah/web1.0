@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                             <div class="right-actions">
-                                <a href="{{ route('admin.ajouter-categorie') }}" class="btn btn-primary float-right" data-toggle="tooltip" data-placement="left" title="Ajouter Catégorie">
+                                <a href="{{ route('admin.categories.create') }}" class="btn btn-primary float-right" data-toggle="tooltip" data-placement="left" title="Ajouter Catégorie">
                                     <i class="icon-plus"></i>
                                 </a>
                             </div>
