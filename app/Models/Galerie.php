@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Galerie extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected $table = 'galerie';
 

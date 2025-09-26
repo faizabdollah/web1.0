@@ -10,8 +10,10 @@ use App\Http\Controllers\Admin\ModifierProduitController;
 use App\Http\Controllers\Admin\CategorieFournisseurSvController;
 use App\Http\Controllers\Admin\TextAboutController;
 use App\Http\Controllers\Admin\ImageAboutController;
+use App\Http\Controllers\Admin\GalerieController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ModifierInfoController;
+use App\Http\Controllers\Admin\TextContactController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
@@ -41,10 +43,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('updateinfo', [ModifierInfoController::class, 'update'])->name('updateinfo.update');
 
         Route::resource('textabouts', TextAboutController::class)->only(['edit', 'update']);
+        Route::resource('textcontacts', TextContactController::class)->only(['edit', 'update']);
         // Routes for modifying main product image
         Route::get('modifier-image/{id}', [App\Http\Controllers\Admin\DetailProduitController::class, 'showImageForm'])->name('modifier-image.edit');
         Route::post('modifier-image/{id}', [App\Http\Controllers\Admin\DetailProduitController::class, 'updateMainImage'])->name('modifier-image.update');
         Route::resource('imageabouts', ImageAboutController::class)->only(['edit', 'update']);
+        Route::resource('galerie', GalerieController::class);
+        // Galerie CRUD
+
     });
 });
 

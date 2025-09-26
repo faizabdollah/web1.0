@@ -15,6 +15,7 @@ use App\Models\Galerie;
 use App\Models\CategorieFournisseurSv;
 use App\Models\text_about;
 use App\Models\image_about;
+use App\Models\text_contact;
 
 class PageController extends Controller
 {
@@ -52,7 +53,7 @@ class PageController extends Controller
     {
         return view('contact', [
             'image_category2' => ImageCategory::first(),
-            'text_contact' => TextCategory::first(),
+            'text_contact' => text_contact::first(),
             'fournisseurs' => Fournisseur::first(),
             'map' => null,
         ]);

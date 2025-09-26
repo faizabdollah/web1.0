@@ -74,11 +74,11 @@
 											<a href='modifier_image_logo_pied_page.php'>Modifier Logo pied page</a>
 										</li>
 										<li>
-									    	<a href='galerie_affi_sv.php'>Images Galerie</a>
-									    </li>
+										    <a href="{{ route('admin.galerie.index') }}">Images Galerie</a>
+										</li>
 										<li>
-									    	<a href='galerie_ajou_sv.php'>Ajouter img Galerie</a>
-									    </li>
+										    <a href="{{ route('admin.galerie.create') }}">Ajouter img Galerie</a>
+										</li>
 										<li>
 									    	<a href='modif_img_sv.php'>Modifier img Site Vitrine</a>
 									    </li>
@@ -102,6 +102,9 @@
 										</li>
 										<li>
 											<a href="{{ route('admin.textabouts.edit', \App\Models\text_about::first()->id) }}">Modifier TextAbout</a>
+										</li>
+										<li>
+											<a href="{{ route('admin.textcontacts.edit', \App\Models\text_contact::first()->id) }}">Modifier TextContact</a>
 										</li>
 										<li>
 											<a href="{{ route('admin.imageabouts.edit', \App\Models\image_about::first()->id) }}">Modifier ImageAbout</a>
