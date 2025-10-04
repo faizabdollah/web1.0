@@ -65,13 +65,7 @@
 									    	<a href="{{ route('admin.sliders.create') }}">Ajouter slider</a>
 									    </li>
 										<li>
-											<a href='modifier_image_logo.php'>Modifier Logo</a>
-										</li>
-										<li>
-											<a href='modifier_image_logo2.php'>Modifier Logo 2</a>
-										</li>
-                                        <li>
-											<a href='modifier_image_logo_pied_page.php'>Modifier Logo pied page</a>
+											<a href='{{ route('admin.logo.edit') }}'>Modifier Logo</a>
 										</li>
 										<li>
 										    <a href="{{ route('admin.galerie.index') }}">Images Galerie</a>
@@ -80,26 +74,11 @@
 										    <a href="{{ route('admin.galerie.create') }}">Ajouter img Galerie</a>
 										</li>
 										<li>
-									    	<a href='modif_img_sv.php'>Modifier img Site Vitrine</a>
+									    	<a href='{{ route('admin.Meta.edit', \App\Models\Meta::first()->id) }}'>Modifier Meta SV</a>
 									    </li>
 										<li>
-									    	<a href='modifier_boutton_sv.php'>Modifier Bouttons SV</a>
+									    	<a href='{{ route('admin.Pixel.edit', \App\Models\Pixel::first()->id) }}'>Modifier pixel SV</a>
 									    </li>
-										<li>
-									    	<a href='modifier_meta_sv.php'>Modifier Meta SV</a>
-									    </li>
-										<li>
-									    	<a href='modifier_pixel_sv.php'>Modifier pixel SV</a>
-									    </li>
-										<li>
-									    	<a href='modifier_text_sv_fr.php'>Modifier Text SV FR</a>
-									    </li>
-										<li>
-									    	<a href='modifier_text_sv_en.php'>Modifier Text SV EN</a>
-									    </li>
-										<li>
-											<a href='modifier_text_sv_ar.php'>Modifier Text SV AR</a>
-										</li>
 										<li>
 											<a href="{{ route('admin.textabouts.edit', \App\Models\text_about::first()->id) }}">Modifier TextAbout</a>
 										</li>
@@ -129,8 +108,8 @@
 										<span class="nav-title">Authentication</span>
 									</a>
 									<ul aria-expanded="false" class="collapse in">
-					    	            <li>
-											<a href='modifier_mot_passe.php'>Modifier mot passe</a>
+										            <li>
+											<a href='{{ route("admin.password.change") }}'>Modifier mot passe</a>
 										</li>
 									</ul>
 								</li>

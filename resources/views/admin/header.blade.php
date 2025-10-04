@@ -85,7 +85,7 @@
                         <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown"
                             aria-haspopup="true">
                             <span style="font-size:30px;" class="icon-profile-male"></span>
-                            <span class="user-name">$row_ses_headere['nom'];</span>
+                            <span class="user-name">{{ \App\Models\Fournisseur::where('mail', \Illuminate\Support\Facades\Auth::user()->email)->first()->nom ?? \Illuminate\Support\Facades\Auth::user()->name ?? 'Admin' }}</span>
                             <i class="icon-chevron-small-down"></i>
                         </a>
                         <div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">

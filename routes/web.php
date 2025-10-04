@@ -14,6 +14,9 @@ use App\Http\Controllers\Admin\GalerieController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ModifierInfoController;
 use App\Http\Controllers\Admin\TextContactController;
+use App\Http\Controllers\Admin\LogoController;
+use App\Http\Controllers\Admin\MetaController;
+use App\Http\Controllers\Admin\PixelController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
@@ -50,6 +53,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('imageabouts', ImageAboutController::class)->only(['edit', 'update']);
         Route::resource('galerie', GalerieController::class);
         // Galerie CRUD
+
+        Route::get('logo', [LogoController::class, 'edit'])->name('logo.edit');
+        Route::post('logo', [LogoController::class, 'update'])->name('logo.update');
+
+        Route::get('Meta/{id}/edit', [MetaController::class, 'edit'])->name('Meta.edit');
+        Route::post('Meta/{id}', [MetaController::class, 'update'])->name('Meta.update');
+        // MetaController routes
+
+        Route::get('Pixel/{id}/edit', [PixelController::class, 'edit'])->name('Pixel.edit');
+        Route::post('Pixel/{id}', [PixelController::class, 'update'])->name('Pixel.update');
+        // PixelController routes
+
+        Route::get('password/change', function () {
+            return view('admin.password-change');
+        })->name('password.change');
 
     });
 });

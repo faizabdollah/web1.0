@@ -44,10 +44,22 @@ class CategorieFournisseurSvController extends Controller
         $validated = $request->validate([
             'nom_categorie' => 'required|string|max:255|unique:categorie_fournisseur_sv,nom_categorie,' . $id,
             'description' => 'nullable|string',
-            // Add validation for other fields as needed based on the form
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // 2MB max
         ]);
 
         $validated['categorie'] = \Illuminate\Support\Str::slug($validated['nom_categorie']);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Delete old image if exists
+            if ($category->img && file_exists(public_path($category->img))) {
+                unlink(public_path($category->img));
+            }
+
+            $imageName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('image_sv/categorie'), $imageName);
+            $validated['img'] = 'image_sv/categorie/' . $imageName;
+        }
 
         $category->update($validated);
 
@@ -63,10 +75,17 @@ class CategorieFournisseurSvController extends Controller
         $validated = $request->validate([
             'nom_categorie' => 'required|string|max:255|unique:categorie_fournisseur_sv,nom_categorie',
             'description' => 'nullable|string',
-            // Add validation for other fields as needed based on the form
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // 2MB max
         ]);
 
         $validated['categorie'] = \Illuminate\Support\Str::slug($validated['nom_categorie']);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $imageName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('image_sv/categorie'), $imageName);
+            $validated['img'] = 'image_sv/categorie/' . $imageName;
+        }
 
         CategorieFournisseurSv::create($validated);
 

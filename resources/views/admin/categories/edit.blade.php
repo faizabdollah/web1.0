@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                             <div class="page-icon">
-                                <i class="icon-laptop_windows"></i>
+                                <img src="{{ asset('MA-admi/img/icon/annuaire_icon.png') }}" alt="Categories" style="width: 32px; height: 32px;">
                             </div>
                             <div class="page-title">
                                 <h5>Modifier Catégorie</h5>
@@ -45,7 +45,7 @@
                             <div class="card-header">
                                 <h3>Modifier la catégorie</h3>
                             </div>
-                            <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" name="edit_categorie" id="edit_categorie">
+                            <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" name="edit_categorie" id="edit_categorie" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
@@ -75,6 +75,26 @@
                                         </div>
                                     </div>
 
+                                    <!-- Image Upload -->
+                                    <div class="form-group row gutters">
+                                        <label class="col-sm-3 col-form-label">Image de la catégorie:</label>
+                                        <div class="col-sm-6">
+                                            @if($category->img)
+                                                <div class="mb-2">
+                                                    <img src="{{ asset($category->img) }}" alt="Current Image" style="max-width: 200px; border: 1px solid #ddd; border-radius: 5px;">
+                                                </div>
+                                            @endif
+                                            <input type="file" name="image" class="form-control-file" id="imageUpload" accept="image/*" onchange="showImagePreview(event)">
+                                            <small class="form-text text-muted">Formats acceptés: JPG, PNG, GIF. Taille maximale: 2MB. Laissez vide pour garder l'image actuelle.</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- Image Preview Section -->
+                                    <div id="imagePreview" style="display: none; margin-top: 20px;">
+                                        <h5>Prévisualisation de la nouvelle image:</h5>
+                                        <div id="previewContainer"></div>
+                                    </div>
+
                                     <div class="form-group row gutters">
                                         <div class="col-sm-10">
                                             <button type="submit" class="btn btn-primary">Mettre à Jour Catégorie</button>
@@ -98,4 +118,42 @@
     </footer>
     <!-- END: .main-footer -->
 </div>
+
+<!-- JavaScript for Image Preview -->
+<script>
+    function showImagePreview(event) {
+        const previewContainer = document.getElementById('previewContainer');
+        const imagePreview = document.getElementById('imagePreview');
+
+        // Clear previous previews
+        previewContainer.innerHTML = '';
+
+        // Get the selected file
+        const file = event.target.files[0];
+        if (file) {
+            // Display the preview section
+            imagePreview.style.display = 'block';
+
+            // Create an image element
+            const imgElement = document.createElement('img');
+            imgElement.style.maxWidth = '200px';
+            imgElement.style.border = '1px solid #ddd';
+            imgElement.style.borderRadius = '5px';
+            imgElement.style.padding = '5px';
+
+            // Read the file and set the src of the image element
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imgElement.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+
+            // Append the image to the preview container
+            previewContainer.appendChild(imgElement);
+        } else {
+            // Hide preview if no file selected
+            imagePreview.style.display = 'none';
+        }
+    }
+</script>
 @endsection
