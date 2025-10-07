@@ -18,7 +18,7 @@ class ModifierProduitController extends Controller
         $categories = CategorieFournisseurSv::where('mail', Auth::user()->email)->get();
         $date = now()->format('Y-m-d');
 
-        return view('admin.ModifierProduitSV', compact('produit', 'categories', 'date'));
+        return view('admin.produit.ModifierProduitSV', compact('produit', 'categories', 'date'));
     }
 
     public function update(Request $request, $id)

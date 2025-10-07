@@ -96,7 +96,7 @@
         <div class="container">
             <div class="row overlap-section">
                 <div class="col-12 text-center">
-                    <img class="rounded-circle" src="{{ asset($site_logo) }}" alt="" />
+                    <img class="rounded-circle" src="{{ asset($site_logo) }}" alt="" height="100" width="100"/>
                 </div>
             </div>
             <!-- start subscribe item -->

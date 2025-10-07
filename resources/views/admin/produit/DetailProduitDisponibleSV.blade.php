@@ -88,7 +88,7 @@
                                 <h5 class="card-title" >{{ $produit->prix }}&nbsp;&nbsp;&nbsp;&nbsp; <del style="text-decoration: line-through;">{{ $produit->prix_barre }}</del></h5>
                                 <p><strong>Référence : </strong>&nbsp;{{ $produit->ref }}</p>
                                 <p><strong>Emplacement numéro : </strong>&nbsp;{{ $produit->empl }}</p>
-                                <p><strong>Sous catégorie :</strong> &nbsp;{{ $produit->sous_categorie }}</p>
+                               
                                 <p class="card-text">{!! $produit->description !!}</p>
                             </div>
 

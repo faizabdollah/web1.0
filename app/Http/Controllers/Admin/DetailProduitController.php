@@ -15,7 +15,7 @@ class DetailProduitController extends Controller
         $produit = Produit::where('id', $id)->where('mail', Auth::user()->email)->firstOrFail();
         $images = ProduitImage::where('produit_id', $id)->where('mail', Auth::user()->email)->get();
 
-        return view('admin.DetailProduitDisponibleSV', compact('produit', 'images'));
+        return view('admin.produit.DetailProduitDisponibleSV', compact('produit', 'images'));
     }
 
     public function destroyImage($id)

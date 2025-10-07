@@ -52,6 +52,7 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Image</th>
                                                 <th>Nom Catégorie</th>
                                                 <th>Description</th>
                                                 <th>Slug Catégorie</th>
@@ -62,6 +63,7 @@
                                             @forelse ($categories as $category)
                                                 <tr>
                                                     <td>{{ $category->id }}</td>
+                                                    <td><img src="{{ asset($category->img) }}" alt="{{ $category->nom_categorie }}" height="50" width="50"></td>
                                                     <td>{{ $category->nom_categorie }}</td>
                                                     <td>{{ $category->description ?? 'N/A' }}</td>
                                                     <td>{{ $category->categorie ?? 'N/A' }}</td>

@@ -15,13 +15,13 @@ class MesProduitController extends Controller
     {
         $produits = Produit::where('mail', Auth::user()->email)->get();
         $totalRows = $produits->count();
-        return view('admin.MesProduit', compact('produits', 'totalRows'));
+        return view('admin.produit.MesProduit', compact('produits', 'totalRows'));
     }
 
     public function create()
     {
         $categories = \App\Models\CategorieFournisseurSv::all();
-        return view('admin.AjouterProduit', compact('categories'));
+        return view('admin.produit.AjouterProduit', compact('categories'));
     }
 
     /**

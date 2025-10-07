@@ -22,7 +22,7 @@ class CategorieFournisseurSvController extends Controller
      */
     public function create()
     {
-        return view('admin.AjouterCategorie');
+        return view('admin.categories.create');
     }
 
     /**
