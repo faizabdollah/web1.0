@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\TextContactController;
 use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\MetaController;
 use App\Http\Controllers\Admin\PixelController;
+use App\Http\Controllers\Admin\ImageSvController;
+use App\Http\Controllers\Admin\TextSvController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
@@ -30,6 +32,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('sliders', SliderController::class);
         Route::resource('categories', CategorieFournisseurSvController::class);
+        Route::get('img-sv/edit', [ImageSvController::class, 'edit'])->name('img-sv.edit');
+        Route::put('img-sv/update', [ImageSvController::class, 'update'])->name('img-sv.update');
+        Route::delete('img-sv/delete/{field}', [ImageSvController::class, 'destroy'])->name('img-sv.delete');
+        Route::resource('text-sv', TextSvController::class)->except(['create', 'store']);
         // Route for deleting a product via GET, placed before resource to avoid conflict with show
         Route::get('produits/delete/{id}', [MesProduitController::class, 'destroy'])->name('produits.delete');
         Route::resource('produits', MesProduitController::class)->only(['index', 'create', 'store', 'show']);

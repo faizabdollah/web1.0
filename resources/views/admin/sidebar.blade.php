@@ -89,8 +89,14 @@
 											<a href="{{ route('admin.imageabouts.edit', \App\Models\image_about::first()->id) }}">Modifier ImageAbout</a>
 										</li>
 										<li>
-									    	<a href='modif_res_soc.php'>Modifier réseaux sociaux</a>
-									    </li>
+											<a href="{{ route('admin.img-sv.edit') }}">Modifier Images SV</a>
+										</li>
+										<li>
+											<a href="{{ route('admin.text-sv.index') }}">Gestion Textes SV</a>
+										</li>
+										<li>
+										   	<a href='modif_res_soc.php'>Modifier réseaux sociaux</a>
+										   </li>
 										<li>
 									    	<a href='modif_car_situ.php'>Modifier carte situation</a>
 									    </li>

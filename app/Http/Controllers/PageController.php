@@ -16,6 +16,7 @@ use App\Models\CategorieFournisseurSv;
 use App\Models\text_about;
 use App\Models\image_about;
 use App\Models\text_contact;
+use App\Models\TextSv;
 
 class PageController extends Controller
 {
@@ -30,6 +31,9 @@ class PageController extends Controller
             'images' => ImgSv::first(),
             'categorie_fournisseur_sv' => CategorieFournisseurSv::all(),
             'reference' => Reference::all(),
+            'text_sv' => TextSv::where('language', 'fr')->first(),
+
+
         ]);
     }
 
@@ -99,6 +103,7 @@ class PageController extends Controller
             'produit'         => $categorie ? Produit::where('categorie', $categorie)->get() : Produit::all(),
             'produit_image'   => ProduitImage::all(),
             'categorie'       => $categorie,
+            'image_about' => image_about::first(),
         ]);
     }
 

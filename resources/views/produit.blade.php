@@ -13,7 +13,7 @@
 @endif
 
 
-<section class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin  round-cursor" style="background-image: url({{ asset($image_category->img1) }})">
+<section class="page-title-separate-breadcrumbs cover-background border-top border-4 border-color-base-color top-space-margin  round-cursor" style="background-image: url({{ asset($image_about->img1) }})">
     <div class="opacity-full-dark bg-gradient-dark-transparent"></div>
     <div class="container position-relative">
         <div class="row align-items-start align-items-lg-end justify-content-end flex-column flex-lg-row extra-small-screen" data-anime='{ "el": "childs", "translateY": [15, 0], "opacity": [0,1], "duration": 400, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>

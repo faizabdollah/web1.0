@@ -7,6 +7,7 @@
     <meta name="keywords" content="Admin, Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Admin Template, Best Admin Template, Bootstrap Template, Themeforest" />
     <meta name="author" content="Bootstrap Gallery" />
     <link rel="icon" href="https://www.marocannuaire.org/photos/favicon.png" type="image/x-icon"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>MA Shop</title>
 
     <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>

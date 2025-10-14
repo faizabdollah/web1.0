@@ -11,6 +11,8 @@ class ImgSv extends Model
 
     protected $table = 'img_sv';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'about1',
         'about2',

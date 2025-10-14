@@ -131,8 +131,8 @@
                                 <i class="line-icon-Medal-2 icon-extra-large text-base-color"></i>
                             </div>
                             <div class="feature-box-content last-paragraph-no-margin">
-                                <span class="alt-font text-dark-gray fs-22 ls-0px">Five stars luxury resort</span>
-                                <p>Experience a unique stay.</p>
+                                <span class="alt-font text-dark-gray fs-22 ls-0px">{{ $text_sv->text1 }}</span>
+                                <p>{{ $text_sv->text2 }}</p>
                             </div>
                         </div>
                     </div>
@@ -144,8 +144,8 @@
                                 <i class="line-icon-Moustache-Smiley icon-extra-large text-base-color"></i>
                             </div>
                             <div class="feature-box-content last-paragraph-no-margin">
-                                <span class="alt-font text-dark-gray fs-22 ls-0px">Well trained manpower</span>
-                                <p>Dedicated meal courses.</p>
+                                <span class="alt-font text-dark-gray fs-22 ls-0px">{{ $text_sv->text3 }}</span>
+                                <p>{{ $text_sv->text4 }}</p>
                             </div>
                         </div>
                     </div>
@@ -157,8 +157,8 @@
                                 <i class="line-icon-French-Fries icon-extra-large text-base-color"></i>
                             </div>
                             <div class="feature-box-content last-paragraph-no-margin">
-                                <span class="alt-font text-dark-gray fs-22 ls-0px">Fine dining restaurants</span>
-                                <p>Discover a medley of flavours.</p>
+                                <span class="alt-font text-dark-gray fs-22 ls-0px">{{ $text_sv->text5 }}</span>
+                                <p>{{ $text_sv->text6 }}</p>
                             </div>
                         </div>
                     </div>
@@ -170,8 +170,8 @@
                                 <i class="line-icon-Life-Safer icon-extra-large text-base-color"></i>
                             </div>
                             <div class="feature-box-content last-paragraph-no-margin">
-                                <span class="alt-font text-dark-gray fs-22 ls-0px">Large swimming pool</span>
-                                <p>Unwind and discover joy.</p>
+                                <span class="alt-font text-dark-gray fs-22 ls-0px">{{ $text_sv->text7 }}</span>
+                                <p>{{ $text_sv->text8 }}</p>
                             </div>
                         </div>
                     </div>
